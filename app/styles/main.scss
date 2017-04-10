@@ -9,7 +9,7 @@ $celtics-green: #008348;
 
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -18,20 +18,22 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 h1 {
-  font-size: 3em;
+  font-size: 3.5em;
 }
 h2 {
-  font-size: 1.4em;
+  font-size: 1.6em;
   margin-bottom: 1.25em;
 }
 p {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 #hero {
   background: $celtics-green;
   background: linear-gradient(to right bottom, $celtics-green, lighten($celtics-green, 15%));
+  background: linear-gradient(to right bottom, transparentize(#000, 0.3), transparentize($celtics-green, 0.3)), url('../images/hero.jpg');
+  background-size: cover;
   color: #fff;
-  padding: 9em 0 11em;
+  padding: 8em 0 10em;
 }
