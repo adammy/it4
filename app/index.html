@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IT4 Infographic</title>
+  <title>The King of the Fourth &ndash; An Interactive Feature on Isaiah Thomas</title>
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
@@ -19,24 +19,44 @@
 </head>
 <body>
 
-  <div id="hero">
+  <div id="backgrounds">
+    <div id="hero-bg"></div>
+    <div id="stat-bg"></div>
+    <div id="play-bg"></div>
+  </div>
+
+  <div id="hero" class="section">
     <div class="container">
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 text-center">
-          <h1>The King of the Fourth</h1>
-          <h2>An interactive infographic on Isaiah Thomas’ 2016-17 season</h2>
-          <p>Isaiah Thomas has been a revelation this season. Despite standing at just 5’9’’, he’s averaging 29 points and 6 assists a game, his team is the number one seed in the Eastern conference, and he just might crack the top five on the league’s MVP ballot.</p>
+        <div class="col-md-7">
+          <div class="block block-negative">
+            <h1>The King of the Fourth</h1>
+            <h2>An Interactive Feature on Isaiah Thomas</h2>
+            <p>Isaiah Thomas has been a revelation this season. Despite standing at just 5’9’’, he’s averaging 29 points and 6 assists a game, his team is the number one seed in the Eastern conference, and he just might crack the top five on the league’s MVP ballot.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="chart">
+  <div id="stat" class="section">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <h3>Stuff</h3>
-          <p>Isaiah Thomas has been a revelation this season. Despite standing at just 5’9’’, he’s averaging 29 points and 6 assists a game, his team is the number one seed in the Eastern conference, and he just might crack the top five on the league’s MVP ballot.</p>
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <h3>The Numbers Don't Lie</h3>
+          <p>Thomas is having one of the most efficient high-volume scoring seasons ever. Out of all the players who’ve taken at least 19 shots per game in a season, Thomas ranks 6th in True Shooting Percentage and 2nd among guards (only trailing Stephen Curry’s 2015-16 campaign).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="play" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="block block-negative">
+            <h1>A Deadly Play and Stuff</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -49,8 +69,11 @@
   <!-- endbower -->
   <!-- endbuild -->
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+
 </body>
 </html>

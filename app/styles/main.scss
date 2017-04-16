@@ -3,37 +3,83 @@
 @import "bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Oswald:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:400,700');
 
+$negative: #222;
 $celtics-green: #008348;
 
 body {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: $negative;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.5;
 }
 
 h1, h2, h3 {
   font-family: 'Oswald', Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 h1 {
-  font-size: 3.5em;
+  font-size: 2.7em;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
 }
 h2 {
-  font-size: 1.6em;
-  margin-bottom: 1.25em;
+  font-size: 1.25em;
+  margin: 0 0 1.25em;
+}
+h3 {
+  font-size: 2.2em;
+  margin-bottom: 0.75em;
+  text-transform: uppercase;
 }
 p {
   font-size: 1em;
   line-height: 1.4;
 }
 
+#backgrounds {
+  & > div {
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    &:first-child {
+      display: block;
+    }
+  }
+  #hero-bg {
+    background: url('../images/hero.jpg');
+  }
+  #stat-bg {
+    background: $negative;
+  }
+  #play-bg {
+    background: #fff;
+  }
+}
+
+.section {
+  min-height: 100vh;
+}
 #hero {
-  background: $celtics-green;
-  background: linear-gradient(to right bottom, $celtics-green, lighten($celtics-green, 15%));
-  background: linear-gradient(to right bottom, transparentize(#000, 0.3), transparentize($celtics-green, 0.3)), url('../images/hero.jpg');
   background-size: cover;
+  padding: 16vh 0 0;
+}
+#stat {
   color: #fff;
-  padding: 8em 0 10em;
+}
+#play {
+
+}
+
+.block {
+  padding: 1.75em 2.5em;
+  &-negative {
+    background: $negative;
+    background: transparentize($negative, 0.1);
+    color: #fff;
+  }
 }
