@@ -15,7 +15,7 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Oswald', Helvetica, Arial, sans-serif;
 }
 h1 {
@@ -30,6 +30,10 @@ h2 {
 h3 {
   font-size: 2.2em;
   margin-bottom: 0.75em;
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 1.1em;
   text-transform: uppercase;
 }
 p {
@@ -61,8 +65,8 @@ p {
     }
   }
   #hero-bg {
-    // background: url('../images/hero.jpg');
-		background: url('//placehold.it/1500x800');
+    background: url('../images/hero.jpg');
+		// background: url('//placehold.it/1500x800');
 		background-size: cover;
   }
   #stat-bg {
@@ -86,18 +90,6 @@ p {
   padding-top: 16vh;
 	& > div {
 		display: block;
-	}
-	.author {
-		color: #ddd;
-		margin-bottom: 1em;
-		.name {
-			font-size: 0.9em;
-			line-height: 1;
-			margin-top: 0.15em;
-		}
-		.date {
-			font-size: 0.8em;
-		}
 	}
 }
 #stat {
