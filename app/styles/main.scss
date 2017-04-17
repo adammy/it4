@@ -37,6 +37,10 @@ p {
   line-height: 1.4;
 }
 
+.animate {
+  display: none;
+}
+
 #backgrounds {
   & > div {
     background-size: cover;
@@ -69,10 +73,11 @@ p {
   padding: 16vh 0 0;
 }
 #stat {
+  padding: 6em 0;
   color: #fff;
 }
 #play {
-
+  padding: 6em 0;
 }
 
 .block {
