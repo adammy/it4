@@ -7,9 +7,9 @@
   $('.section').waypoint({
     handler: function (direction) {
       if (waypointsInit) {
-        $('#backgrounds > div').fadeOut(200);
-        $(`#backgrounds #${this.element.id}-bg`).fadeIn(200);
-        //$(`#${this.element.id} .animate`).removeClass('animate').addClass('animated');
+        $('#backgrounds > div').fadeOut(300);
+        $(`#backgrounds #${this.element.id}-bg`).fadeIn(300);
+				$(`#${this.element.id} > div`).show();
       }
       waypointsInit = true;
     },
