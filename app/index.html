@@ -48,21 +48,29 @@
 	        <div class="col-md-8 col-md-offset-2 text-center">
 	          <h3>The Numbers Don't Lie</h3>
 	          <p>Thomas is having one of the most efficient high-volume scoring seasons ever. Out of players who've taken at least 19 shots per game in a season, Thomas ranks 6th in True Shooting Percentage <em>all-time</em> and 2nd all-time among guards &ndash; only trailing Stephen Curry’s 2015-16 season.</p>
-						<p>Use the field below to compare Thomas' 2016-17 against various thangs.</p>
-						<select name="compare" id="compare">
-							<option value="hide">Select a Player</option>
-							<option value="irving">Kyrie Irving</option>
-							<option value="wall">John Wall</option>
-							<option value="curry">Stephen Curry</option>
-							<option value="lillard">Damian Lillard</option>
-							<option value="walker">Kemba Walker</option>
-							<option value="lowry">Kyle Lowry</option>
-							<option value="conley">Mike Conley</option>
-							<option value="paul">Chris Paul</option>
-							<option value="average">The Average Starting Guard</option>
-						</select>
+						<p>Using the field below, select your favorite player to see how their stats matchup with Thomas.</p>
 	        </div>
 	      </div>
+				<br />
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4">
+						<div class="custom-select">
+							<select name="compare" id="compare">
+								<option value="" class="hide">Select a Player</option>
+								<option value="irving">Kyrie Irving</option>
+								<option value="wall">John Wall</option>
+								<option value="curry">Stephen Curry</option>
+								<option value="lillard">Damian Lillard</option>
+								<option value="walker">Kemba Walker</option>
+								<option value="lowry">Kyle Lowry</option>
+								<option value="conley">Mike Conley</option>
+								<option value="paul">Chris Paul</option>
+								<option value="average">The Average Starting Guard</option>
+							</select>
+							<div class="arrow"></div>
+						</div>
+					</div>
+				</div>
         <br /><br /><br />
         <div class="row">
           <div class="col-md-3 text-center">
@@ -76,14 +84,14 @@
 								<canvas id="ppg-chart" height="180"></canvas>
 							</div>
 							<div class="col-sm-6 text-center">
-								<h4>Assist Per Game</h4>
+								<h4>Assists Per Game</h4>
 								<canvas id="ast-chart" height="180"></canvas>
 							</div>
 						</div>
 						<br />
 						<div class="row">
 							<div class="col-sm-6 text-center">
-								<h4>4Q PPG</h4>
+								<h4>Fourth Quarter PPG</h4>
 								<canvas id="4q-ppg-chart" height="180"></canvas>
 							</div>
 							<div class="col-sm-6 text-center">
@@ -93,9 +101,16 @@
 						</div>
 						<br />
 						<div class="row">
-							<div class="col-sm-6 col-sm-offset-3 text-center">
+							<div class="col-xs-12 text-center">
 								<h4>True Shooting %</h4>
-								<canvas id="ts-chart" height="180"></canvas>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 text-center">
+								<canvas id="ts-it-chart" height="180"></canvas>
+							</div>
+							<div class="col-sm-6 text-center">
+								<canvas id="ts-compare-chart" height="180"></canvas>
 							</div>
 						</div>
           </div>
@@ -110,10 +125,14 @@
 	  <div id="play" class="section">
 	    <div class="container-fluid">
 	      <div class="row">
+					<div class="col-lg-7 col-md-6">
+						<div style="width: 100%; height: 0px; position: relative; padding-bottom: 55.869%;"><iframe src="//streamable.com/s/v973j/uecxge" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no" style="width: 100%; height: 100%; position: absolute;"></iframe><script async src="//v.embedcdn.com/v1/embed.js"></script></div>
+					</div>
 	        <div class="col-lg-5 col-md-6">
-	          <div class="block block-negative">
-	            <h3>A Deadly Play and Stuff</h3>
-	          </div>
+	          <h3>Off-Ball Isaiah</h3>
+						<p>While it's true that a large majority of the little guy's offense comes in pick-and-roll, isolations, and ferocious transition sprints, the Celtics also use their superstar as a dynamic off-ball threat.</p>
+						<p>Brad Stevens began installing sets running Thomas through screens about halfway through last season to get him a “live dribble,” a situation in which the player receives the ball and immediately goes into an action, such as a shot or dribble penetration, rather than stopping and going into a triple-threat stance. Now, more than two years since Thomas was acquired, Stevens is getting even more creative by placing him into dribble handoffs. Thomas leads the league in dribble handoff possessions with 213, per Synergy Sports. Here’s the variation they run most often:</p>
+						<p>Thomas starts off in the right corner, an area of the 3-point range where he shoots 50.8 percent, then runs through a screen. As that’s happening, a player at the top of the key dribbles toward Thomas for the handoff. Per Synergy, Thomas scores an elite 1.17 points per possession in this scenario. The play is hard to defend because the defender usually lags behind and Thomas can attack in so many different ways. If the defender goes under the screen, Thomas can pull up for 3. If he goes over, Thomas can attack the rim to finish or draw fouls. If the defense aggressively denies the lane, Thomas can pass to an open man.</p>
 	        </div>
 	      </div>
 	    </div>

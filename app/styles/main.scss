@@ -47,6 +47,43 @@ p {
   border-radius: 50%;
 }
 
+.custom-select {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	select {
+		background: lighten($negative, 5%);
+		color: #fff;
+		border: 0;
+		border-radius: 0;
+		outline: 0;
+		padding: 1em;
+		width: 100%;
+		display: inline-block;
+		cursor: pointer;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		&::-ms-expand {
+			display: none;
+		}
+		&:hover, &:focus {
+			background: lighten($negative, 7%);
+		}
+	}
+	.arrow {
+		border-style: solid;
+		border-width: 8px 5px 0 5px;
+		border-color: #fff transparent transparent transparent;
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 1.5em;
+		right: 1em;
+		pointer-events: none;
+	}
+}
+
 #wrapper {
 	max-width: 1750px;
 	margin: 0 auto;
@@ -95,11 +132,13 @@ p {
 	}
 }
 #stat {
-  padding-top: 15vh;
+	padding-top: 7em;
+	padding-bottom: 7em;
   color: #fff;
 }
 #play {
-  padding-top: 15vh;
+  padding-top: 7em;
+	padding-bottom: 7em;
 }
 
 .block {

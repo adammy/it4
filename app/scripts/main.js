@@ -269,8 +269,8 @@
 		options: barOptions()
 	});
 
-	// ts% chart
-	let tsChart = new Chart($('#ts-chart'), {
+	// ts% IT chart
+	let tsitChart = new Chart($('#ts-it-chart'), {
 		type: 'doughnut',
 		data: {
 			labels: ['IT', 'Misses'],
@@ -284,11 +284,29 @@
 		}
 	});
 
+	// ts% other player chart
+	let tscompareChart = new Chart($('#ts-compare-chart'), {
+		type: 'doughnut',
+		data: {
+			labels: ['IT', 'Misses'],
+			datasets: [
+				{
+					data: [0.58, 0.42],
+					backgroundColor: ['rgba(134, 0, 56, 0.3)', 'rgba(0, 0, 0, 0.1)'],
+					borderColor: ['#860038', 'transparent']
+				}
+			]
+		}
+	});
+
+	// on change of player field
 	$('select#compare').on('change', function () {
 		let player = $(this).val();
 		updateCharts(player);
+		$(this).children('.hide').remove();
 	});
 
+	// update charts with player argument
 	function updateCharts(player) {
 
 		let name = players[player].name;
