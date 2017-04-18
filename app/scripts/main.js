@@ -194,6 +194,22 @@
 		}
 	};
 
+	// average starting point guard dataset
+	players['average'] = {
+		name: 'Point Guard',
+		stats: {
+			pts: 17.5,
+			ast: 6.3,
+			fqpts: 4.8,
+			per: 18.6,
+			ts: 0.56
+		},
+		colors: {
+			bg: 'rgba(85, 85, 85, 0.3)',
+			border: '#555555'
+		}
+	};
+
 	// returns data object needed for bar graphs
 	let barData = function (comparisonLabel, categoryLabel, itData, comparisonData, comparisonBackgroundColor, comparisonBorderColor) {
 		return {
