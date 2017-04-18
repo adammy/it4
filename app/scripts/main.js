@@ -47,116 +47,63 @@
 	Chart.defaults.global.elements.rectangle.borderWidth = 1;
 	Chart.defaults.global.elements.rectangle.borderColor = '#008348';
 
-	// ppg chart
-	let ppgChart = new Chart($('#ppg-chart'), {
-		type: 'bar',
-		data: {
-			labels: ['IT', 'Kyrie'],
+	// returns data object needed for bar graphs
+	let barData = function (comparisonLabel, categoryLabel, itData, comparisonData, comparisonBackgroundColor, comparisonBorderColor) {
+		return {
+			labels: ['IT', comparisonLabel],
 			datasets: [
 				{
-					label: 'PTS',
-					data: [29.8, 24.5],
-					backgroundColor: ['rgba(0, 131, 72, 0.3)', 'rgba(134, 0, 56, 0.3)'],
-					borderColor: ['#008348', '#860038']
+					label: categoryLabel,
+					data: [itData, comparisonData],
+					backgroundColor: ['rgba(0, 131, 72, 0.3)', comparisonBackgroundColor],
+					borderColor: ['#008348', comparisonBorderColor]
 				}
 			]
-		},
-		options: {
+		}
+	}
+
+	// returns options object for bar graphs
+	let barOptions = function (stepSize = 10, min = 0, max = 30) {
+		return {
 			scales: {
 				yAxes: [{
 					ticks: {
 						beginAtZero: true,
-						stepSize: 10,
-						min: 0,
-						max: 30
+						stepSize: stepSize,
+						min: min,
+						max: max
 					}
 				}]
 			}
 		}
+	}
+
+	// ppg chart
+	let ppgChart = new Chart($('#ppg-chart'), {
+		type: 'bar',
+		data: barData('Kyrie', 'PTS', 29.8, 24.5, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		options: barOptions()
 	});
 
 	// ast chart
 	let astChart = new Chart($('#ast-chart'), {
 		type: 'bar',
-		data: {
-			labels: ['IT', 'Kyrie'],
-			datasets: [
-				{
-					label: 'AST',
-					data: [6.2, 5.7],
-					backgroundColor: ['rgba(0, 131, 72, 0.3)', 'rgba(134, 0, 56, 0.3)'],
-					borderColor: ['#008348', '#860038']
-				}
-			]
-		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true,
-						stepSize: 2,
-						min: 0,
-						max: 8
-					}
-				}]
-			}
-		}
+		data: barData('Kyrie', 'AST', 6.2, 5.7, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		options: barOptions(2, 0, 8)
 	});
 
 	// 4q ppg chart
 	let fourthppgChart = new Chart($('#4q-ppg-chart'), {
 		type: 'bar',
-		data: {
-			labels: ['IT', 'Kyrie'],
-			datasets: [
-				{
-					label: '4Q PPG',
-					data: [9.8, 6.2],
-					backgroundColor: ['rgba(0, 131, 72, 0.3)', 'rgba(134, 0, 56, 0.3)'],
-					borderColor: ['#008348', '#860038']
-				}
-			]
-		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true,
-						stepSize: 5,
-						min: 0,
-						max: 10
-					}
-				}]
-			}
-		}
+		data: barData('Kyrie', '4Q PPG', 9.8, 6.2, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		options: barOptions(5, 0, 10)
 	});
 
 	// per chart
 	let perChart = new Chart($('#per-chart'), {
 		type: 'bar',
-		data: {
-			labels: ['IT', 'Kyrie'],
-			datasets: [
-				{
-					label: 'PER',
-					data: [29.5, 22.8],
-					backgroundColor: ['rgba(0, 131, 72, 0.3)', 'rgba(134, 0, 56, 0.3)'],
-					borderColor: ['#008348', '#860038']
-				}
-			]
-		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true,
-						stepSize: 10,
-						min: 0,
-						max: 30
-					}
-				}]
-			}
-		}
+		data: barData('Kyrie', 'PER', 29.5, 22.8, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		options: barOptions()
 	});
 
 	// ts% chart
