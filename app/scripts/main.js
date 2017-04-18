@@ -50,7 +50,7 @@
 	// returns data object needed for bar graphs
 	let barData = function (comparisonLabel, categoryLabel, itData, comparisonData, comparisonBackgroundColor, comparisonBorderColor) {
 		return {
-			labels: ['IT', comparisonLabel],
+			labels: ['Thomas', comparisonLabel],
 			datasets: [
 				{
 					label: categoryLabel,
@@ -81,28 +81,28 @@
 	// ppg chart
 	let ppgChart = new Chart($('#ppg-chart'), {
 		type: 'bar',
-		data: barData('Kyrie', 'PTS', 29.8, 24.5, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('Irving', 'PTS', 29.8, 24.5, 'rgba(134, 0, 56, 0.3)', '#860038'),
 		options: barOptions()
 	});
 
 	// ast chart
 	let astChart = new Chart($('#ast-chart'), {
 		type: 'bar',
-		data: barData('Kyrie', 'AST', 6.2, 5.7, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('Irving', 'AST', 6.2, 5.7, 'rgba(134, 0, 56, 0.3)', '#860038'),
 		options: barOptions(2, 0, 8)
 	});
 
 	// 4q ppg chart
 	let fourthppgChart = new Chart($('#4q-ppg-chart'), {
 		type: 'bar',
-		data: barData('Kyrie', '4Q PPG', 9.8, 6.2, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('Irving', '4Q PPG', 9.8, 6.2, 'rgba(134, 0, 56, 0.3)', '#860038'),
 		options: barOptions(5, 0, 10)
 	});
 
 	// per chart
 	let perChart = new Chart($('#per-chart'), {
 		type: 'bar',
-		data: barData('Kyrie', 'PER', 29.5, 22.8, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('Irving', 'PER', 29.5, 22.8, 'rgba(134, 0, 56, 0.3)', '#860038'),
 		options: barOptions()
 	});
 
