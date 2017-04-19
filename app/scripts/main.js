@@ -66,99 +66,35 @@
 		}
 	};
 
-	// kyrie irving dataset
-	players['irving'] = {
-		name: 'Kyrie Irving',
+	// average starting point guard dataset
+	players['average-guard'] = {
+		name: 'Average Guard',
 		stats: {
-			pts: 25.2,
-			ast: 5.8,
-			fqpts: 5.6,
-			per: 23,
-			ts: 0.58
+			pts: 17.5,
+			ast: 6.3,
+			fqpts: 4.8,
+			per: 18.6,
+			ts: 0.56
 		},
 		colors: {
-			bg: 'rgba(134, 0, 56, 0.3)',
-			border: '#860038'
+			bg: 'rgba(85, 85, 85, 0.3)',
+			border: '#555555'
 		}
 	};
 
-	// john wall dataset
-	players['wall'] = {
-		name: 'John Wall',
+	// average player dataset
+	players['average'] = {
+		name: 'Average Player',
 		stats: {
-			pts: 23.1,
-			ast: 10.7,
-			fqpts: 6.1,
-			per: 23.3,
-			ts: 0.542
+			pts: 8.8,
+			ast: 1.9,
+			fqpts: 2.2,
+			per: 15,
+			ts: 0.552
 		},
 		colors: {
-			bg: 'rgba(245, 0, 47, 0.3)',
-			border: '#f5002f'
-		}
-	};
-
-	// steph curry dataset
-	players['curry'] = {
-		name: 'Stephen Curry',
-		stats: {
-			pts: 25.3,
-			ast: 6.6,
-			fqpts: 4.9,
-			per: 23,
-			ts: 0.624
-		},
-		colors: {
-			bg: 'rgba(253, 185, 39, 0.3)',
-			border: '#fdb927'
-		}
-	};
-
-	// damian lillard dataset
-	players['lillard'] = {
-		name: 'Damian Lillard',
-		stats: {
-			pts: 27,
-			ast: 5.9,
-			fqpts: 7.1,
-			per: 24.1,
-			ts: 0.586
-		},
-		colors: {
-			bg: 'rgba(240, 22, 58, 0.3)',
-			border: '#f0163a'
-		}
-	};
-
-	// kemba walker dataset
-	players['walker'] = {
-		name: 'Kemba Walker',
-		stats: {
-			pts: 23.2,
-			ast: 5.5,
-			fqpts: 6.2,
-			per: 21.3,
-			ts: 0.569
-		},
-		colors: {
-			bg: 'rgba(0, 140, 168, 0.3)',
-			border: '#008ca8'
-		}
-	};
-
-	// kyle lowry dataset
-	players['lowry'] = {
-		name: 'Kyle Lowry',
-		stats: {
-			pts: 22.4,
-			ast: 7,
-			fqpts: 7.7,
-			per: 22.9,
-			ts: 0.623
-		},
-		colors: {
-			bg: 'rgba(206, 17, 65, 0.3)',
-			border: '#ce1141'
+			bg: 'rgba(85, 85, 85, 0.3)',
+			border: '#555555'
 		}
 	};
 
@@ -178,7 +114,71 @@
 		}
 	};
 
-	// michael conley dataset
+	// steph curry dataset
+	players['curry'] = {
+		name: 'Stephen Curry',
+		stats: {
+			pts: 25.3,
+			ast: 6.6,
+			fqpts: 4.9,
+			per: 23,
+			ts: 0.624
+		},
+		colors: {
+			bg: 'rgba(253, 185, 39, 0.3)',
+			border: '#fdb927'
+		}
+	};
+
+	// kyrie irving dataset
+	players['irving'] = {
+		name: 'Kyrie Irving',
+		stats: {
+			pts: 25.2,
+			ast: 5.8,
+			fqpts: 5.6,
+			per: 23,
+			ts: 0.58
+		},
+		colors: {
+			bg: 'rgba(134, 0, 56, 0.3)',
+			border: '#860038'
+		}
+	};
+
+	// damian lillard dataset
+	players['lillard'] = {
+		name: 'Damian Lillard',
+		stats: {
+			pts: 27,
+			ast: 5.9,
+			fqpts: 7.1,
+			per: 24.1,
+			ts: 0.586
+		},
+		colors: {
+			bg: 'rgba(240, 22, 58, 0.3)',
+			border: '#f0163a'
+		}
+	};
+
+	// kyle lowry dataset
+	players['lowry'] = {
+		name: 'Kyle Lowry',
+		stats: {
+			pts: 22.4,
+			ast: 7,
+			fqpts: 7.7,
+			per: 22.9,
+			ts: 0.623
+		},
+		colors: {
+			bg: 'rgba(206, 17, 65, 0.3)',
+			border: '#ce1141'
+		}
+	};
+
+	// chris paul dataset
 	players['paul'] = {
 		name: 'Chris Paul',
 		stats: {
@@ -194,19 +194,35 @@
 		}
 	};
 
-	// average starting point guard dataset
-	players['average'] = {
-		name: 'Point Guard',
+	// kemba walker dataset
+	players['walker'] = {
+		name: 'Kemba Walker',
 		stats: {
-			pts: 17.5,
-			ast: 6.3,
-			fqpts: 4.8,
-			per: 18.6,
-			ts: 0.56
+			pts: 23.2,
+			ast: 5.5,
+			fqpts: 6.2,
+			per: 21.3,
+			ts: 0.569
 		},
 		colors: {
-			bg: 'rgba(85, 85, 85, 0.3)',
-			border: '#555555'
+			bg: 'rgba(0, 140, 168, 0.3)',
+			border: '#008ca8'
+		}
+	};
+
+	// john wall dataset
+	players['wall'] = {
+		name: 'John Wall',
+		stats: {
+			pts: 23.1,
+			ast: 10.7,
+			fqpts: 6.1,
+			per: 23.3,
+			ts: 0.542
+		},
+		colors: {
+			bg: 'rgba(245, 0, 47, 0.3)',
+			border: '#f5002f'
 		}
 	};
 
@@ -248,13 +264,6 @@
 		options: barOptions()
 	});
 
-	// ast chart
-	let astChart = new Chart($('#ast-chart'), {
-		type: 'bar',
-		data: barData('Irving', 'AST', 6.2, 5.7, 'rgba(134, 0, 56, 0.3)', '#860038'),
-		options: barOptions(4, 0, 12)
-	});
-
 	// 4q ppg chart
 	let fourthppgChart = new Chart($('#4q-ppg-chart'), {
 		type: 'bar',
@@ -262,41 +271,18 @@
 		options: barOptions(5, 0, 10)
 	});
 
+	// true shooting % chart
+	let tsChart = new Chart($('#ts-chart'), {
+		type: 'bar',
+		data: barData('Irving', 'TS%', 0.625, 0.58, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		options: barOptions(0.35, 0, 0.7)
+	});
+
 	// per chart
 	let perChart = new Chart($('#per-chart'), {
 		type: 'bar',
 		data: barData('Irving', 'PER', 29.5, 22.8, 'rgba(134, 0, 56, 0.3)', '#860038'),
 		options: barOptions()
-	});
-
-	// ts% IT chart
-	let tsitChart = new Chart($('#ts-it-chart'), {
-		type: 'doughnut',
-		data: {
-			labels: ['IT', 'Misses'],
-			datasets: [
-				{
-					data: [0.625, 0.375],
-					backgroundColor: ['rgba(0, 131, 72, 0.3)', 'rgba(0, 0, 0, 0.1)'],
-					borderColor: ['#008348', 'transparent']
-				}
-			]
-		}
-	});
-
-	// ts% other player chart
-	let tscompareChart = new Chart($('#ts-compare-chart'), {
-		type: 'doughnut',
-		data: {
-			labels: ['IT', 'Misses'],
-			datasets: [
-				{
-					data: [0.58, 0.42],
-					backgroundColor: ['rgba(134, 0, 56, 0.3)', 'rgba(0, 0, 0, 0.1)'],
-					borderColor: ['#860038', 'transparent']
-				}
-			]
-		}
 	});
 
 	// on change of player field
@@ -316,65 +302,37 @@
 
 		// stat updates
 		ppgChart.data.datasets[0].data[1] = players[player].stats.pts;
-		astChart.data.datasets[0].data[1] = players[player].stats.ast;
+		//astChart.data.datasets[0].data[1] = players[player].stats.ast;
 		fourthppgChart.data.datasets[0].data[1] = players[player].stats.fqpts;
 		perChart.data.datasets[0].data[1] = players[player].stats.per;
+		tsChart.data.datasets[0].data[1] = players[player].stats.ts;
 
 		// label updates
 		ppgChart.data.labels[1] = lastName;
-		astChart.data.labels[1] = lastName;
+		//astChart.data.labels[1] = lastName;
 		fourthppgChart.data.labels[1] = lastName;
 		perChart.data.labels[1] = lastName;
+		tsChart.data.labels[1] = lastName;
 
 		// color updates
 		ppgChart.data.datasets[0].backgroundColor[1] = bgColor;
 		ppgChart.data.datasets[0].borderColor[1] = borderColor;
-		astChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
-		astChart.data.datasets[0].borderColor[1] = players[player].colors.border;
+		//astChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
+		//astChart.data.datasets[0].borderColor[1] = players[player].colors.border;
 		fourthppgChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
 		fourthppgChart.data.datasets[0].borderColor[1] = players[player].colors.border;
 		perChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
 		perChart.data.datasets[0].borderColor[1] = players[player].colors.border;
+		tsChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
+		tsChart.data.datasets[0].borderColor[1] = players[player].colors.border;
 
 		// deploy updated chart data
 		ppgChart.update();
-		astChart.update();
+		//astChart.update();
 		fourthppgChart.update();
 		perChart.update();
+		tsChart.update();
 
 	}
-
-
-
-	/*
-  let chart = new Chart($('#chart'), {
-    type: 'radar',
-		data: {
-			labels: ['PTS', '4Q PTS', 'AST', 'TS%', 'PER'],
-			datasets: [
-				{
-					label: 'Isaiah Thomas',
-					backgroundColor: 'rgba(0, 131, 72, 0.3)',
-					borderColor: '#008348',
-					pointBackgroundColor: '#008348',
-					pointBorderColor: '#fff',
-					pointHoverBackgroundColor: '#fff',
-					pointHoverBorderColor: '#008348',
-					data: [29.8, (9.8 * 3), (5.9 * 4), (56 / 2), 29]
-				},
-				{
-					label: 'Kyrie Irving',
-					backgroundColor: 'rgba(134, 0, 56, 0.3)',
-					borderColor: '#860038',
-					pointBackgroundColor: '#860038',
-					pointBorderColor: '#fff',
-					pointHoverBackgroundColor: '#fff',
-					pointHoverBorderColor: '#860038',
-					data: [24.9, (6.6 * 3), (5.6 * 4), (52 / 2), 25]
-				}
-			]
-		}
-  });
-	*/
 
 }(jQuery));

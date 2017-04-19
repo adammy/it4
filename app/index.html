@@ -48,7 +48,7 @@
 	        <div class="col-md-8 col-md-offset-2 text-center">
 	          <h3>The Numbers Don't Lie</h3>
 	          <p>Thomas is having one of the most efficient high-volume scoring seasons ever. Out of players who've taken at least 19 shots per game in a season, Thomas ranks 6th in True Shooting Percentage <em>all-time</em> and 2nd all-time among guards &ndash; only trailing Stephen Curry’s 2015-16 season.</p>
-						<p>Using the field below, select your favorite player to see how their stats matchup with Thomas.</p>
+						<p>Using the field below, select a player to see how their scoring stats matchup with Thomas.</p>
 	        </div>
 	      </div>
 				<br />
@@ -57,15 +57,16 @@
 						<div class="custom-select">
 							<select name="compare" id="compare">
 								<option value="" class="hide">Select a Player</option>
-								<option value="irving">Kyrie Irving</option>
-								<option value="wall">John Wall</option>
-								<option value="curry">Stephen Curry</option>
-								<option value="lillard">Damian Lillard</option>
-								<option value="walker">Kemba Walker</option>
-								<option value="lowry">Kyle Lowry</option>
+								<option value="average-guard">The Average Starting Point Guard</option>
+								<option value="average">The Average Player</option>
 								<option value="conley">Mike Conley</option>
+								<option value="curry">Stephen Curry</option>
+								<option value="irving">Kyrie Irving</option>
+								<option value="lillard">Damian Lillard</option>
+								<option value="lowry">Kyle Lowry</option>
 								<option value="paul">Chris Paul</option>
-								<option value="average">The Average Starting Guard</option>
+								<option value="walker">Kemba Walker</option>
+								<option value="wall">John Wall</option>
 							</select>
 							<div class="arrow"></div>
 						</div>
@@ -84,33 +85,19 @@
 								<canvas id="ppg-chart" height="180"></canvas>
 							</div>
 							<div class="col-sm-6 text-center">
-								<h4>Assists Per Game</h4>
-								<canvas id="ast-chart" height="180"></canvas>
+								<h4>Fourth Quarter PPG</h4>
+								<canvas id="4q-ppg-chart" height="180"></canvas>
 							</div>
 						</div>
 						<br />
 						<div class="row">
 							<div class="col-sm-6 text-center">
-								<h4>Fourth Quarter PPG</h4>
-								<canvas id="4q-ppg-chart" height="180"></canvas>
+								<h4>True Shooting %</h4>
+								<canvas id="ts-chart" height="180"></canvas>
 							</div>
 							<div class="col-sm-6 text-center">
 								<h4>PER</h4>
 								<canvas id="per-chart" height="180"></canvas>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-xs-12 text-center">
-								<h4>True Shooting %</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6 text-center">
-								<canvas id="ts-it-chart" height="180"></canvas>
-							</div>
-							<div class="col-sm-6 text-center">
-								<canvas id="ts-compare-chart" height="180"></canvas>
 							</div>
 						</div>
           </div>
