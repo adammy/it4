@@ -17,6 +17,24 @@
   });
 	*/
 
+	// scrollmagic init
+	/*
+	let controller = new ScrollMagic.Controller({
+		globalSceneOptions: {
+			triggerHook: 'onLeave'
+		}
+	});
+
+	let slides = document.querySelectorAll('.section');
+
+	for (let i = 0; i < slides.length; i++) {
+		new ScrollMagic.Scene({
+			triggerElement: slides[i]
+		})
+		.setPin(slides[i])
+		.addTo(controller);
+	}*/
+
 	// chart.js font defaults
 	Chart.defaults.global.defaultFontColor = '#666';
 	Chart.defaults.global.defaultFontFamily = '\'Source Sans Pro\', \'Helvetica\', \'Arial\', sans-serif';

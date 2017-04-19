@@ -66,6 +66,9 @@ img {
 	padding-left: $padding-factor;
 	padding-right: $padding-factor;
 }
+.pad-top {
+	padding-top: $padding-factor;
+}
 .pad-left {
 	padding-left: $padding-factor;
 	&-md {
@@ -190,16 +193,27 @@ img {
 }
 #stat {
 	background: $negative; // remove
+	color: #fff;
 	padding-top: 7em;
 	padding-bottom: 7em;
-  color: #fff;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 2.5em;
 	}
 }
 #play {
+	background: #fff; // remove
   padding-top: 7em;
+	padding-bottom: 7em;
+	@media (max-width: $md) {
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
+	}
+}
+#highlights {
+	background: $negative; // remove
+	color: #fff;
+	padding-top: 7em;
 	padding-bottom: 7em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
