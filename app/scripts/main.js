@@ -2,7 +2,7 @@
 
   'use strict';
 
-	// waypoints init
+	/* waypoints init
   let waypointsInit = false;
   $('.section').waypoint({
     handler: function (direction) {
@@ -15,6 +15,7 @@
     },
     offset: '25%'
   });
+	*/
 
 	// chart.js font defaults
 	Chart.defaults.global.defaultFontColor = '#666';
@@ -334,5 +335,24 @@
 		tsChart.update();
 
 	}
+
+	// resize full screen video
+	function resizeVideo() {
+		let video = $('video');
+		let windowWidth = window.innerWidth;
+		let windowHeight = window.innerHeight;
+		if ((windowWidth / 16) >= (windowHeight / 9)) {
+			video.attr('width', windowWidth);
+			video.attr('height', 'auto');
+		} else {
+			video.attr('width', 'auto');
+			video.attr('height', windowHeight);
+		}
+	}
+
+	// on window resize or page load, run:
+	$(window).on('resize load', function () {
+		resizeVideo();
+	});
 
 }(jQuery));

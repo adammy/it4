@@ -8,6 +8,13 @@
 $negative: #222;
 $celtics-green: #008348;
 
+$xs: 480px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+
+$padding-factor: 2.5em;
+
 body {
   color: $negative;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -41,16 +48,47 @@ p {
   font-size: 1em;
   line-height: 1.4;
 	margin-bottom: 1em;
+	&.sm {
+		font-size: 0.8em;
+	}
+}
+img {
+	max-width: 100%;
 }
 
+.muted {
+	color: #999;
+}
 .circle {
   border-radius: 50%;
+}
+.pad-side {
+	padding-left: $padding-factor;
+	padding-right: $padding-factor;
+}
+.pad-left {
+	padding-left: $padding-factor;
+	&-md {
+		@media (max-width: $md) {
+			padding-left: 0;
+		}
+	}
+}
+.text {
+	&-left {
+		&-md {
+			@media (max-width: $md) {
+				text-align: left;
+			}
+		}
+	}
 }
 
 .custom-select {
 	width: 100%;
 	display: inline-block;
 	position: relative;
+	margin: 1em 0 3em;
 	select {
 		background: lighten($negative, 5%);
 		color: #fff;
@@ -102,6 +140,15 @@ p {
     &:first-child {
       display: block;
     }
+		&.video {
+			video {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				-webkit-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
+			}
+		}
   }
   #hero-bg {
     background: url('../images/hero.jpg');
@@ -118,27 +165,46 @@ p {
 
 .section {
   min-height: 100vh;
-	padding-right: 60px;
-	padding-left: 60px;
+	padding-right: 3em;
+	padding-left: 3em;
 	& > div {
-		display: none;
+		//display: none; put back
+	}
+	@media (max-width: $md) {
+		min-height: auto;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
 	}
 }
 #hero {
+	background: url('../images/hero.jpg'); // remove
   background-size: cover;
   padding-top: 16vh;
 	& > div {
 		display: block;
 	}
+	@media (max-width: $md) {
+		background: $celtics-green;
+		padding-top: 0;
+	}
 }
 #stat {
+	background: $negative; // remove
 	padding-top: 7em;
 	padding-bottom: 7em;
   color: #fff;
+	@media (max-width: $md) {
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
+	}
 }
 #play {
   padding-top: 7em;
 	padding-bottom: 7em;
+	@media (max-width: $md) {
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
+	}
 }
 
 .block {
@@ -148,4 +214,13 @@ p {
     background: transparentize($negative, 0.1);
     color: #fff;
   }
+	&-green-md {
+		@media (max-width: $md) {
+			background: $celtics-green;
+		}
+	}
+	@media (max-width: $md) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
