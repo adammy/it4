@@ -19,7 +19,7 @@
 
 	// chart.js font defaults
 	Chart.defaults.global.defaultFontColor = '#666';
-	Chart.defaults.global.defaultFontFamily = "'Source Sans Pro', 'Helvetica', 'Arial', sans-serif";
+	Chart.defaults.global.defaultFontFamily = '\'Source Sans Pro\', \'Helvetica\', \'Arial\', sans-serif';
 	Chart.defaults.global.defaultFontSize = 16;
 	Chart.defaults.global.defaultFontStyle = 'normal';
 
