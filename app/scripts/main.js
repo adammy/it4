@@ -71,7 +71,12 @@
 
 	// isaiah thomas dataset
 	players['thomas'] = {
-		name: 'Isaiah Thomas',
+		name: {
+			first: 'Isaiah',
+			last: 'Thomas'
+		},
+		height: 69,
+		weight: 185,
 		stats: {
 			pts: 28.9,
 			ast: 5.9,
@@ -87,7 +92,12 @@
 
 	// average starting point guard dataset
 	players['average-guard'] = {
-		name: 'Average Guard',
+		name: {
+			first: 'Average Starting Point',
+			last: 'Guard'
+		},
+		height: 74,
+		weight: 190,
 		stats: {
 			pts: 17.5,
 			ast: 6.3,
@@ -103,7 +113,12 @@
 
 	// average player dataset
 	players['average'] = {
-		name: 'Average Player',
+		name: {
+			first: 'Average',
+			last: 'Player'
+		},
+		height: 79,
+		weight: 220,
 		stats: {
 			pts: 8.8,
 			ast: 1.9,
@@ -119,7 +134,12 @@
 
 	// michael conley dataset
 	players['conley'] = {
-		name: 'Michael Conley',
+		name: {
+			first: 'Michael',
+			last: 'Conley'
+		},
+		height: 73,
+		weight: 175,
 		stats: {
 			pts: 20.6,
 			ast: 6.3,
@@ -135,7 +155,12 @@
 
 	// steph curry dataset
 	players['curry'] = {
-		name: 'Stephen Curry',
+		name: {
+			first: 'Stephen',
+			last: 'Curry'
+		},
+		height: 75,
+		weight: 190,
 		stats: {
 			pts: 25.3,
 			ast: 6.6,
@@ -151,7 +176,12 @@
 
 	// kyrie irving dataset
 	players['irving'] = {
-		name: 'Kyrie Irving',
+		name: {
+			first: 'Kyrie',
+			last: 'Irving'
+		},
+		height: 75,
+		weight: 193,
 		stats: {
 			pts: 25.2,
 			ast: 5.8,
@@ -167,7 +197,12 @@
 
 	// damian lillard dataset
 	players['lillard'] = {
-		name: 'Damian Lillard',
+		name: {
+			first: 'Damian',
+			last: 'Lillard'
+		},
+		height: 75,
+		weight: 195,
 		stats: {
 			pts: 27,
 			ast: 5.9,
@@ -183,7 +218,12 @@
 
 	// kyle lowry dataset
 	players['lowry'] = {
-		name: 'Kyle Lowry',
+		name: {
+			first: 'Kyle',
+			last: 'Lowry'
+		},
+		height: 72,
+		weight: 205,
 		stats: {
 			pts: 22.4,
 			ast: 7,
@@ -199,7 +239,12 @@
 
 	// chris paul dataset
 	players['paul'] = {
-		name: 'Chris Paul',
+		name: {
+			first: 'Chris',
+			last: 'Paul'
+		},
+		height: 72,
+		weight: 175,
 		stats: {
 			pts: 18.1,
 			ast: 9.2,
@@ -215,7 +260,12 @@
 
 	// kemba walker dataset
 	players['walker'] = {
-		name: 'Kemba Walker',
+		name: {
+			first: 'Kemba',
+			last: 'Walker'
+		},
+		height: 73,
+		weight: 184,
 		stats: {
 			pts: 23.2,
 			ast: 5.5,
@@ -231,7 +281,12 @@
 
 	// john wall dataset
 	players['wall'] = {
-		name: 'John Wall',
+		name: {
+			first: 'John',
+			last: 'Wall'
+		},
+		height: 76,
+		weight: 210,
 		stats: {
 			pts: 23.1,
 			ast: 10.7,
@@ -246,15 +301,15 @@
 	};
 
 	// returns data object needed for bar graphs
-	let barData = function (comparisonLabel, categoryLabel, itData, comparisonData, comparisonBackgroundColor, comparisonBorderColor) {
+	let barData = function (categoryLabel, itData, comparisonData) {
 		return {
-			labels: ['Thomas', comparisonLabel],
+			labels: [players['thomas'].name.last, players['average-guard'].name.last],
 			datasets: [
 				{
 					label: categoryLabel,
 					data: [itData, comparisonData],
-					backgroundColor: ['rgba(0, 131, 72, 0.3)', comparisonBackgroundColor],
-					borderColor: ['#008348', comparisonBorderColor]
+					backgroundColor: [players['thomas'].colors.bg, players['average-guard'].colors.bg],
+					borderColor: [players['thomas'].colors.border, players['average-guard'].colors.border]
 				}
 			]
 		}
@@ -276,31 +331,38 @@
 		}
 	}
 
+	// returns a string formatted as 6'1''; takes in inches arg
+	let heightString = function (inches) {
+		let feet = parseInt(inches / 12);
+		let inch = parseInt(inches % 12);
+		return `${feet}'${inch}''`;
+	}
+
 	// ppg chart
 	let ppgChart = new Chart($('#ppg-chart'), {
 		type: 'bar',
-		data: barData('Irving', 'PTS', 29.8, 24.5, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('PTS', players['thomas'].stats.pts, players['average-guard'].stats.pts),
 		options: barOptions()
 	});
 
 	// 4q ppg chart
 	let fourthppgChart = new Chart($('#4q-ppg-chart'), {
 		type: 'bar',
-		data: barData('Irving', '4Q PPG', 9.8, 6.2, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('4Q PTS', players['thomas'].stats.fqpts, players['average-guard'].stats.fqpts),
 		options: barOptions(5, 0, 10)
 	});
 
 	// true shooting % chart
 	let tsChart = new Chart($('#ts-chart'), {
 		type: 'bar',
-		data: barData('Irving', 'TS%', 0.625, 0.58, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('TS%', players['thomas'].stats.ts, players['average-guard'].stats.ts),
 		options: barOptions(0.35, 0, 0.7)
 	});
 
 	// per chart
 	let perChart = new Chart($('#per-chart'), {
 		type: 'bar',
-		data: barData('Irving', 'PER', 29.5, 22.8, 'rgba(134, 0, 56, 0.3)', '#860038'),
+		data: barData('PER', players['thomas'].stats.per, players['average-guard'].stats.per),
 		options: barOptions()
 	});
 
@@ -314,40 +376,38 @@
 	// update charts with player argument
 	function updateCharts(player) {
 
-		let name = players[player].name;
-		let lastName = name.substr(name.indexOf(' ') + 1);
+		let fname = players[player].name.first;
+		let lname = players[player].name.last;
+		let height = heightString(players[player].height);
+		let weight = players[player].weight;
+		let pts = players[player].stats.pts;
+		let fqpts = players[player].stats.fqpts;
+		let per = players[player].stats.per;
+		let ts = players[player].stats.ts;
 		let bgColor = players[player].colors.bg;
 		let borderColor = players[player].colors.border;
 
+		// update name, height, weight, and image data
+		$('#compare-name').text(`${fname} ${lname}`);
+		$('#compare-ht').text(height);
+		$('#compare-wt').text(weight);
+		$('#compare-img').attr('src', `//placehold.it/223x364?text=${lname}`);
+
 		// stat updates
-		ppgChart.data.datasets[0].data[1] = players[player].stats.pts;
-		//astChart.data.datasets[0].data[1] = players[player].stats.ast;
-		fourthppgChart.data.datasets[0].data[1] = players[player].stats.fqpts;
-		perChart.data.datasets[0].data[1] = players[player].stats.per;
-		tsChart.data.datasets[0].data[1] = players[player].stats.ts;
+		ppgChart.data.datasets[0].data[1] = pts;
+		fourthppgChart.data.datasets[0].data[1] = fqpts;
+		perChart.data.datasets[0].data[1] = per;
+		tsChart.data.datasets[0].data[1] = ts;
 
 		// label updates
-		ppgChart.data.labels[1] = lastName;
-		//astChart.data.labels[1] = lastName;
-		fourthppgChart.data.labels[1] = lastName;
-		perChart.data.labels[1] = lastName;
-		tsChart.data.labels[1] = lastName;
+		ppgChart.data.labels[1] && fourthppgChart.data.labels[1] && perChart.data.labels[1] && tsChart.data.labels[1] = lname;
 
 		// color updates
-		ppgChart.data.datasets[0].backgroundColor[1] = bgColor;
-		ppgChart.data.datasets[0].borderColor[1] = borderColor;
-		//astChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
-		//astChart.data.datasets[0].borderColor[1] = players[player].colors.border;
-		fourthppgChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
-		fourthppgChart.data.datasets[0].borderColor[1] = players[player].colors.border;
-		perChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
-		perChart.data.datasets[0].borderColor[1] = players[player].colors.border;
-		tsChart.data.datasets[0].backgroundColor[1] = players[player].colors.bg;
-		tsChart.data.datasets[0].borderColor[1] = players[player].colors.border;
+		ppgChart.data.datasets[0].backgroundColor[1] && fourthppgChart.data.datasets[0].backgroundColor[1] && perChart.data.datasets[0].backgroundColor[1] && tsChart.data.datasets[0].backgroundColor[1] = bgColor;
+		ppgChart.data.datasets[0].borderColor[1] && fourthppgChart.data.datasets[0].borderColor[1] && perChart.data.datasets[0].borderColor[1] && tsChart.data.datasets[0].borderColor[1] = borderColor;
 
 		// deploy updated chart data
 		ppgChart.update();
-		//astChart.update();
 		fourthppgChart.update();
 		perChart.update();
 		tsChart.update();

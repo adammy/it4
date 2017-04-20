@@ -167,7 +167,7 @@ img {
 }
 
 .section {
-  min-height: 100vh;
+  // min-height: 100vh;
 	padding-right: 3em;
 	padding-left: 3em;
 	& > div {
@@ -182,6 +182,7 @@ img {
 #hero {
 	background: url('../images/hero.jpg'); // remove
   background-size: cover;
+	min-height: 100vh;
   padding-top: 16vh;
 	& > div {
 		display: block;
