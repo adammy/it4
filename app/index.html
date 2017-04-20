@@ -56,46 +56,33 @@
 		          <p>Thomas is having one of the most efficient high-volume scoring seasons ever. Out of players who've taken at least 19 shots per game in a season, Thomas ranks 6th in True Shooting Percentage <em>all-time</em> and 2nd all-time among guards &ndash; only trailing Stephen Curry’s 2015-16 season.</p>
 						</div>
 	        </div>
-					<div class="col-md-6">
+					<div class="col-md-3">
 						<div class="custom-select">
-							<select name="compare" id="compare">
-								<option value="" class="hide">Select a Player</option>
-								<optgroup label="General">
-									<option value="average-guard">The Average Starting Point Guard</option>
-									<option value="average">The Average Player</option>
-								</optgroup>
-								<optgroup label="Top Point Guards">
-									<option value="conley">Mike Conley</option>
-									<option value="curry">Stephen Curry</option>
-									<option value="irving">Kyrie Irving</option>
-									<option value="lillard">Damian Lillard</option>
-									<option value="lowry">Kyle Lowry</option>
-									<option value="paul">Chris Paul</option>
-									<option value="walker">Kemba Walker</option>
-									<option value="wall">John Wall</option>
-								</optgroup>
+							<select name="" id="">
+								<option value="" class="hide">Select A Stat</option>
+								<option value="">Points Per Game</option>
+								<option value="">4th Quarter Points Per Game</option>
+								<option value="">True Shooting Percentage</option>
+								<option value="">PER</option>
+							</select>
+							<div class="arrow"></div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="custom-select">
+							<select name="" id="">
+								<option value="" class="hide">Select A Player Group</option>
+								<option value="">General</option>
+								<option value="">Top Point Guards</option>
+								<option value="">Historic</option>
 							</select>
 							<div class="arrow"></div>
 						</div>
 					</div>
 	      </div>
-				<br /><br />
 				<div class="row">
-					<div class="col-md-3 text-center">
-						<h4>Points Per Game</h4>
-						<canvas id="ppg-chart" height="180"></canvas>
-					</div>
-					<div class="col-md-3 text-center">
-						<h4>Fourth Quarter PPG</h4>
-						<canvas id="4q-ppg-chart" height="180"></canvas>
-					</div>
-					<div class="col-md-3 text-center">
-						<h4>True Shooting %</h4>
-						<canvas id="ts-chart" height="180"></canvas>
-					</div>
-					<div class="col-md-3 text-center">
-						<h4>PER</h4>
-						<canvas id="per-chart" height="180"></canvas>
+					<div class="col-md-12">
+						<canvas id="chart" height="85"></canvas>
 					</div>
 				</div>
 	    </div>

@@ -99,7 +99,6 @@ img {
 	width: 100%;
 	display: inline-block;
 	position: relative;
-	margin: 1em 0 3em;
 	select {
 		background: lighten($negative, 5%);
 		color: #fff;
@@ -203,11 +202,14 @@ img {
 #stat {
 	background: $negative; // remove
 	color: #fff;
-	padding-top: 7em;
-	padding-bottom: 7em;
+	padding-top: 5em;
+	padding-bottom: 5em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 2.5em;
+	}
+	#chart {
+		margin-top: 3em;
 	}
 }
 #play {
