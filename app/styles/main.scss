@@ -77,6 +77,14 @@ img {
 		}
 	}
 }
+.pad-right {
+	padding-right: $padding-factor;
+	&-md {
+		@media (max-width: $md) {
+			padding-right: 0;
+		}
+	}
+}
 .text {
 	&-left {
 		&-md {
@@ -167,7 +175,7 @@ img {
 }
 
 .section {
-  // min-height: 100vh;
+  min-height: 100vh;
 	padding-right: 3em;
 	padding-left: 3em;
 	& > div {
