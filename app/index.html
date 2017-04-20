@@ -22,16 +22,6 @@
 
 	<div id="wrapper">
 
-		<!--div id="backgrounds">
-	    <div id="hero-bg"></div>
-	    <div id="stat-bg"></div>
-	    <div id="play-bg" class="video">
-	    	<video>
-	    		<source src="images/off-ball.mp4" type="video/mp4">
-	    	</video>
-	    </div>
-	  </div-->
-
 		<img src="images/hero.jpg" alt="" class="hidden-lg hidden-md">
 	  <div id="hero" class="section">
 	    <div class="container-fluid">
@@ -58,23 +48,23 @@
 	        </div>
 					<div class="col-md-3">
 						<div class="custom-select">
-							<select name="" id="">
+							<select name="stat">
 								<option value="" class="hide">Select A Stat</option>
-								<option value="">Points Per Game</option>
-								<option value="">4th Quarter Points Per Game</option>
-								<option value="">True Shooting Percentage</option>
-								<option value="">PER</option>
+								<option value="ppg">Points Per Game</option>
+								<option value="fqppg">4th Quarter Points Per Game</option>
+								<option value="ts">True Shooting Percentage</option>
+								<option value="per">PER</option>
 							</select>
 							<div class="arrow"></div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="custom-select">
-							<select name="" id="">
+							<select name="group">
 								<option value="" class="hide">Select A Player Group</option>
-								<option value="">General</option>
-								<option value="">Top Point Guards</option>
-								<option value="">Historic</option>
+								<option value="general">General</option>
+								<option value="pointGuards">Top Point Guards</option>
+								<option value="historic">Historic</option>
 							</select>
 							<div class="arrow"></div>
 						</div>
@@ -144,8 +134,6 @@
   <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
-
-  <!--script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script-->
 
 	<!-- build:js scripts/data.js -->
 	<script src="scripts/data.js"></script>

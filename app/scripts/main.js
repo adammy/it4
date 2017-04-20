@@ -3,6 +3,7 @@
   'use strict';
 
 	// scrollmagic init
+	/*
 	let controller = new ScrollMagic.Controller({
 		globalSceneOptions: {
 			triggerHook: 'onLeave'
@@ -18,6 +19,7 @@
 		.setPin(slides[i])
 		.addTo(controller);
 	}
+	*/
 
 	// chart.js font defaults
 	Chart.defaults.global.defaultFontColor = '#666';
@@ -55,12 +57,12 @@
 	let chart = new Chart(chartElement, {
 		type: 'bar',
 		data: {
-			labels: ['Thomas', 'Curry', 'Irving', 'Thomas', 'Curry', 'Irving', 'Thomas', 'Curry', 'Irving'],
+			labels: [],
 			datasets: [{
-				label: 'PTS',
-				data: [29.8, 25.4, 23.5, 29.8, 25.4, 23.5, 29.8, 25.4, 23.5],
-				backgroundColor: ['rgba(0, 131, 72, 0.3)', 'rgba(253, 185, 39, 0.3)', 'rgba(134, 0, 56, 0.3)', 'rgba(0, 131, 72, 0.3)', 'rgba(253, 185, 39, 0.3)', 'rgba(134, 0, 56, 0.3)', 'rgba(0, 131, 72, 0.3)', 'rgba(253, 185, 39, 0.3)', 'rgba(134, 0, 56, 0.3)'],
-				borderColor: ['#008348', '#fdb927', '#860038', '#008348', '#fdb927', '#860038', '#008348', '#fdb927', '#860038']
+				label: '',
+				backgroundColor: [],
+				borderColor: [],
+				data: []
 			}]
 		},
 		options: {
@@ -68,13 +70,157 @@
 				yAxes: [{
 					ticks: {
 						beginAtZero: true,
-						stepSize: 10,
+						stepSize: 0,
 						min: 0,
-						max: 30
+						max: 0
 					}
 				}]
 			}
 		}
+	});
+
+	// generates/updates the chart based on options obj arg
+	function generateChart(stat, dataset) {
+
+		// starting array with IT info and appending the dataset
+		dataset = [thomas, ...dataset];
+
+		// sort dataset based on stat selected
+		if (stat === 'ppg') {
+			dataset = dataset.sort(function (a, b) {
+				if (a.stats.ppg > b.stats.ppg) {
+					return -1;
+				} else if (a.stats.ppg < b.stats.ppg) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
+		} else if (stat === 'fqppg') {
+			dataset = dataset.sort(function (a, b) {
+				if (a.stats.fqppg > b.stats.fqppg) {
+					return -1;
+				} else if (a.stats.fqppg < b.stats.fqppg) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
+		} else if (stat === 'ts') {
+			dataset = dataset.sort(function (a, b) {
+				if (a.stats.ts > b.stats.ts) {
+					return -1;
+				} else if (a.stats.ts < b.stats.ts) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
+		} else if (stat === 'per') {
+			dataset = dataset.sort(function (a, b) {
+				if (a.stats.per > b.stats.per) {
+					return -1;
+				} else if (a.stats.per < b.stats.per) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
+		}
+
+		// setting values for chart
+		let label = stat.toUpperCase();
+		let names = dataset.map(function (player) {
+			return `${player.name.first} ${player.name.last}`;
+		});
+		let datapoints = (function () {
+			if (stat === 'ppg') {
+				return dataset.map(function (player) {
+					return player.stats.ppg;
+				});
+			} else if (stat === 'fqppg') {
+				return dataset.map(function (player) {
+					return player.stats.fqppg;
+				});
+			} else if (stat === 'ts') {
+				return dataset.map(function (player) {
+					return player.stats.ts;
+				});
+			} else if (stat === 'per') {
+				return dataset.map(function (player) {
+					return player.stats.per;
+				});
+			}
+		})();
+		let bgColors = dataset.map(function (player) {
+			return player.colors.bg;
+		});
+		let borderColors = dataset.map(function (player) {
+			return player.colors.border;
+		});
+		let stepSize = (function () {
+			if (stat === 'ppg') {
+				return 16;
+			} else if (stat === 'fqppg') {
+				return 5;
+			} else if (stat === 'ts') {
+				return 0.5;
+			} else if (stat === 'per') {
+				return 16;
+			}
+		})();
+		let min = 0;
+		let max = (function () {
+			if (stat === 'ppg') {
+				return 32;
+			} else if (stat === 'fqppg') {
+				return 10;
+			} else if (stat === 'ts') {
+				return 1;
+			} else if (stat === 'per') {
+				return 32;
+			}
+		})();
+
+		// set chart labels
+		chart.data.labels = names;
+
+		// set chart datasets
+		chart.data.datasets[0] = {
+			label: label,
+			data: datapoints,
+			backgroundColor: bgColors,
+			borderColor: borderColors
+		}
+
+		// set chart options to those provided
+		chart.options.scales.yAxes[0].ticks.stepSize = stepSize;
+		chart.options.scales.yAxes[0].ticks.min = min;
+		chart.options.scales.yAxes[0].ticks.max = max;
+
+		// update the chart on the page
+		chart.update();
+
+	}
+
+	generateChart('ppg', pointGuards);
+
+	$('select[name="stat"], select[name="group"]').on('change', function () {
+
+		let stat = $('select[name="stat"]').val() || 'ppg';
+		let group = $('select[name="group"]').val() || 'general';
+		let dataset;
+
+		if (group === 'general') {
+			dataset = general;
+		} else if (group === 'pointGuards') {
+			dataset = pointGuards;
+		} else if (group === 'historic') {
+			dataset = historic;
+		}
+
+		generateChart(stat, dataset);
+
 	});
 
 }(jQuery));
