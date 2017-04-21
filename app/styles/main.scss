@@ -106,6 +106,20 @@ img {
 	}
 }
 
+.author {
+	margin-bottom: 5.5em;
+	img {
+		border-radius: 50%;
+		float: left;
+	}
+	.name {
+		font-size: 0.75em;
+		color: #ccc;
+		margin: 0.75em 0 0 1em;
+		float: left;
+	}
+}
+
 .custom-select {
 	width: 100%;
 	display: inline-block;
@@ -164,7 +178,8 @@ img {
 	background: url('../images/hero.jpg');
   background-size: cover;
 	min-height: 100vh;
-  padding-top: 16vh;
+  padding-top: 6em;
+	padding-bottom: 5em;
 	& > div {
 		display: block;
 	}
@@ -172,6 +187,7 @@ img {
 		background: $celtics-green;
 		min-height: auto;
 		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
 
