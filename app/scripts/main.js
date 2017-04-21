@@ -193,7 +193,7 @@
 	$('select[name="stat"], select[name="group"]').on('change', function () {
 
 		let stat = $('select[name="stat"]').val() || 'ppg';
-		let group = $('select[name="group"]').val() || 'general';
+		let group = $('select[name="group"]').val() || 'pointGuards';
 		let dataset;
 
 		if (group === 'general') {
@@ -211,7 +211,7 @@
 	function chartSizing() {
 
 		let stat = $('select[name="stat"]').val() || 'ppg';
-		let group = $('select[name="group"]').val() || 'general';
+		let group = $('select[name="group"]').val() || 'pointGuards';
 		let dataset;
 
 		if (group === 'general') {
