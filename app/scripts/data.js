@@ -76,7 +76,26 @@ let topPlayers = [
 			bg: 'rgba(182, 191, 191, 0.3)',
 			border: '#b6bFbF'
 		}
-	}
+	},
+	{
+		name: {
+			first: 'Russell',
+			last: 'Westbrook'
+		},
+		height: 75,
+		weight: 200,
+		stats: {
+			ppg: 31.6,
+			apg: 10.4,
+			fqppg: 10,
+			per: 30.6,
+			ts: 0.554
+		},
+		colors: {
+			bg: 'rgba(0, 125, 195, 0.3)',
+			border: '#007dc3'
+		}
+	},
 ];
 
 // general comparisons dataset
@@ -273,6 +292,25 @@ let pointGuards = [
 		colors: {
 			bg: 'rgba(245, 0, 47, 0.3)',
 			border: '#f5002f'
+		}
+	},
+	{
+		name: {
+			first: 'Russell',
+			last: 'Westbrook'
+		},
+		height: 75,
+		weight: 200,
+		stats: {
+			ppg: 31.6,
+			apg: 10.4,
+			fqppg: 10,
+			per: 30.6,
+			ts: 0.554
+		},
+		colors: {
+			bg: 'rgba(0, 125, 195, 0.3)',
+			border: '#007dc3'
 		}
 	}
 ];
