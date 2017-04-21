@@ -179,10 +179,10 @@ img {
 	background: $negative;
 	color: #fff;
 	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-bottom: 6em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
-		padding-bottom: 2.5em;
+		padding-bottom: 3em;
 	}
 	#chart {
 		margin-top: 3em;
@@ -192,10 +192,10 @@ img {
 #play {
 	background: #fff;
   padding-top: 5em;
-	padding-bottom: 5em;
+	padding-bottom: 6em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
-		padding-bottom: 2.5em;
+		padding-bottom: 3em;
 	}
 }
 
@@ -203,10 +203,10 @@ img {
 	background: $negative;
 	color: #fff;
 	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-bottom: 6em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
-		padding-bottom: 2.5em;
+		padding-bottom: 3em;
 	}
 }
 
@@ -234,7 +234,7 @@ img {
 	opacity: 0.6;
 	transform: scale(0.95);
 	transition: all 0.2s ease;
-	&:hover {
+	&:hover, &.active {
 		transform: scale(1);
 		opacity: 1;
 	}
@@ -260,5 +260,14 @@ img {
 			font-size: 0.7em;
 			margin-bottom: 0;
 		}
+	}
+}
+
+.slick {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	&.open {
+		max-height: 1000px;
 	}
 }

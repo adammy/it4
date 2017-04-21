@@ -242,8 +242,61 @@
 
 	// init slick
 	$('.slick').slick({
-		arrows: true,
-		dots: true
+		arrows: false,
+		dots: false,
+		fade: true
 	});
+
+	// on slide change
+	$('.slick').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+
+		// get elements
+		let currentSlideElement = $(slick.$slides.get(currentSlide));
+		let nextSlideElement = $(slick.$slides.get(nextSlide));
+
+		// get game
+		let game = nextSlideElement.data('game');
+
+		// set active state
+		$('.game').removeClass('active');
+		$(`.game[data-game="${game}"]`).addClass('active');
+
+		// get video players
+		let currentPlayer = currentSlideElement.find('iframe').get(0);
+		let nextPlayer = nextSlideElement.find('iframe').get(0);
+
+		// pause previous video
+		if (currentPlayer != undefined) {
+			currentPlayer.contentWindow.postMessage(JSON.stringify({
+				"event": "command",
+				"func": "pauseVideo"
+			}), '*');
+		}
+
+		// play next video
+		if (nextPlayer != undefined) {
+			nextPlayer.contentWindow.postMessage(JSON.stringify({
+				"event": "command",
+				"func": "playVideo"
+			}), '*');
+		}
+
+	});
+
+	// on click of game
+	$('.game').on('click', function () {
+
+		// show slick slider
+		$('.slick').addClass('open');
+
+		// get data attr
+		let game = $(this).data('game');
+		let slide = parseInt($(this).data('slide'));
+
+		// go to designated slide
+		$('.slick').slick('slickGoTo', slide);
+
+	});
+
 
 }(jQuery));
