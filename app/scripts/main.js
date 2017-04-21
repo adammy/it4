@@ -72,7 +72,17 @@
 		dataset = [thomas, ...dataset];
 
 		// sort dataset based on stat selected
-		if (stat === 'ppg') {
+		if (stat === 'fqppg') {
+			dataset = dataset.sort(function (a, b) {
+				if (a.stats.fqppg > b.stats.fqppg) {
+					return -1;
+				} else if (a.stats.fqppg < b.stats.fqppg) {
+					return 1;
+				} else {
+					return 0;
+				}
+			});
+		} else if (stat === 'ppg') {
 			dataset = dataset.sort(function (a, b) {
 				if (a.stats.ppg > b.stats.ppg) {
 					return -1;
@@ -87,16 +97,6 @@
 				if (a.stats.apg > b.stats.apg) {
 					return -1;
 				} else if (a.stats.apg < b.stats.apg) {
-					return 1;
-				} else {
-					return 0;
-				}
-			});
-		} else if (stat === 'fqppg') {
-			dataset = dataset.sort(function (a, b) {
-				if (a.stats.fqppg > b.stats.fqppg) {
-					return -1;
-				} else if (a.stats.fqppg < b.stats.fqppg) {
 					return 1;
 				} else {
 					return 0;
@@ -130,17 +130,17 @@
 			return `${player.name.first} ${player.name.last}`;
 		});
 		let datapoints = (function () {
-			if (stat === 'ppg') {
+			if (stat === 'fqppg') {
+				return dataset.map(function (player) {
+					return player.stats.fqppg;
+				});
+			} else if (stat === 'ppg') {
 				return dataset.map(function (player) {
 					return player.stats.ppg;
 				});
 			} else if (stat === 'apg') {
 				return dataset.map(function (player) {
 					return player.stats.apg;
-				});
-			} else if (stat === 'fqppg') {
-				return dataset.map(function (player) {
-					return player.stats.fqppg;
 				});
 			} else if (stat === 'ts') {
 				return dataset.map(function (player) {
@@ -159,12 +159,12 @@
 			return player.colors.border;
 		});
 		let stepSize = (function () {
-			if (stat === 'ppg') {
+			if (stat === 'fqppg') {
+				return 5;
+			} else if (stat === 'ppg') {
 				return 16;
 			} else if (stat === 'apg') {
 				return 4;
-			} else if (stat === 'fqppg') {
-				return 5;
 			} else if (stat === 'ts') {
 				return 0.5;
 			} else if (stat === 'per') {
@@ -173,12 +173,12 @@
 		})();
 		let min = 0;
 		let max = (function () {
-			if (stat === 'ppg') {
+			if (stat === 'fqppg') {
+				return 10;
+			} else if (stat === 'ppg') {
 				return 32;
 			} else if (stat === 'apg') {
 				return 12;
-			} else if (stat === 'fqppg') {
-				return 10;
 			} else if (stat === 'ts') {
 				return 1;
 			} else if (stat === 'per') {
@@ -210,11 +210,13 @@
 	// on select filter changes, update chart
 	$('select[name="stat"], select[name="group"]').on('change', function () {
 
-		let stat = $('select[name="stat"]').val() || 'ppg';
-		let group = $('select[name="group"]').val() || 'pointGuards';
+		let stat = $('select[name="stat"]').val() || 'fqppg';
+		let group = $('select[name="group"]').val() || 'topPlayers';
 		let dataset;
 
-		if (group === 'pointGuards') {
+		if (group === 'topPlayers') {
+			dataset = topPlayers;
+		} else if (group === 'pointGuards') {
 			dataset = pointGuards;
 		} else if (group === 'general') {
 			dataset = general;
@@ -232,11 +234,13 @@
 
 	function chartSizing() {
 
-		let stat = $('select[name="stat"]').val() || 'ppg';
-		let group = $('select[name="group"]').val() || 'pointGuards';
+		let stat = $('select[name="stat"]').val() || 'fqppg';
+		let group = $('select[name="group"]').val() || 'topPlayers';
 		let dataset;
 
-		if (group === 'pointGuards') {
+		if (group === 'topPlayers') {
+			dataset = topPlayers;
+		} else if (group === 'pointGuards') {
 			dataset = pointGuards;
 		} else if (group === 'general') {
 			dataset = general;

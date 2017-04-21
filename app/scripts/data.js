@@ -19,6 +19,47 @@ let thomas = {
 	}
 };
 
+let topPlayers = [
+	{
+		name: {
+			first: 'Stephen',
+			last: 'Curry'
+		},
+		height: 75,
+		weight: 190,
+		stats: {
+			ppg: 25.3,
+			apg: 6.6,
+			fqppg: 4.9,
+			per: 23,
+			ts: 0.624
+		},
+		colors: {
+			bg: 'rgba(253, 185, 39, 0.3)',
+			border: '#fdb927'
+		}
+	},
+	{
+		name: {
+			first: 'Kyrie',
+			last: 'Irving'
+		},
+		height: 75,
+		weight: 193,
+		stats: {
+			ppg: 25.2,
+			apg: 5.8,
+			fqppg: 5.6,
+			per: 23,
+			ts: 0.58
+		},
+		colors: {
+			bg: 'rgba(134, 0, 56, 0.3)',
+			border: '#860038'
+		}
+	}
+];
+
 // general comparisons dataset
 let general = [
 	{
@@ -61,6 +102,7 @@ let general = [
 	}
 ];
 
+// top point guards dataset
 let pointGuards = [
 	{
 		name: {
@@ -216,6 +258,7 @@ let pointGuards = [
 	}
 ];
 
+// all-time historic seasons dataset
 let historic = [
 	{
 		name: {
@@ -291,6 +334,52 @@ let historic = [
 		colors: {
 			bg: 'rgba(206, 17, 65, 0.3)',
 			border: '#ce1141'
+		}
+	}
+];
+
+// short historic seasons dataset
+let historicShort = [
+	{
+		name: {
+			first: 'Kobe',
+			last: 'Bryant (07-08)'
+		},
+		height: 72,
+		weight: 165,
+		stats: {
+			ppg: 28.3,
+			apg: 5.4,
+			fqppg: 7.8,
+			per: 24.2,
+			ts: 0.576
+		},
+		colors: {
+			bg: 'rgba(253, 185, 39, 0.3)',
+			border: '#fdb927'
+		}
+	}
+];
+
+// tall historic seasons dataset
+let historicTall = [
+	{
+		name: {
+			first: 'Kobe',
+			last: 'Bryant (07-08)'
+		},
+		height: 72,
+		weight: 165,
+		stats: {
+			ppg: 28.3,
+			apg: 5.4,
+			fqppg: 7.8,
+			per: 24.2,
+			ts: 0.576
+		},
+		colors: {
+			bg: 'rgba(253, 185, 39, 0.3)',
+			border: '#fdb927'
 		}
 	}
 ];
