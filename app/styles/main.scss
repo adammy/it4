@@ -20,6 +20,12 @@ body {
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.5;
+	@media (max-width: $sm) {
+		font-size: 18px;
+	}
+	@media (max-width: $xs) {
+		font-size: 16px;
+	}
 }
 
 h1, h2, h3, h4 {
@@ -68,6 +74,11 @@ img {
 }
 .pad-top {
 	padding-top: $padding-factor;
+	&-md {
+		@media (max-width: $md) {
+			padding-top: 0;
+		}
+	}
 }
 .pad-left {
 	padding-left: $padding-factor;
@@ -99,6 +110,7 @@ img {
 	width: 100%;
 	display: inline-block;
 	position: relative;
+	margin: 1.5em 0 0;
 	select {
 		background: lighten($negative, 5%);
 		color: #fff;
@@ -138,56 +150,18 @@ img {
 	position: relative;
 }
 
-#backgrounds {
-	position: relative;
-  & > div {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    &:first-child {
-      display: block;
-    }
-		&.video {
-			video {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				-webkit-transform: translate(-50%,-50%);
-				transform: translate(-50%,-50%);
-			}
-		}
-  }
-  #hero-bg {
-    background: url('../images/hero.jpg');
-		// background: url('//placehold.it/1500x800');
-		background-size: cover;
-  }
-  #stat-bg {
-    background: $negative;
-  }
-  #play-bg {
-    background: #fff;
-  }
-}
-
 .section {
-  min-height: 100vh;
 	padding-right: 3em;
 	padding-left: 3em;
-	& > div {
-		//display: none; put back
-	}
 	@media (max-width: $md) {
 		min-height: auto;
 		padding-left: 1.5em;
 		padding-right: 1.5em;
 	}
 }
+
 #hero {
-	background: url('../images/hero.jpg'); // remove
+	background: url('../images/hero.jpg');
   background-size: cover;
 	min-height: 100vh;
   padding-top: 16vh;
@@ -196,11 +170,13 @@ img {
 	}
 	@media (max-width: $md) {
 		background: $celtics-green;
+		min-height: auto;
 		padding-top: 0;
 	}
 }
+
 #stat {
-	background: $negative; // remove
+	background: $negative;
 	color: #fff;
 	padding-top: 5em;
 	padding-bottom: 5em;
@@ -212,20 +188,22 @@ img {
 		margin-top: 3em;
 	}
 }
+
 #play {
-	background: #fff; // remove
-  padding-top: 7em;
-	padding-bottom: 7em;
+	background: #fff;
+  padding-top: 5em;
+	padding-bottom: 5em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 2.5em;
 	}
 }
+
 #highlights {
-	background: $negative; // remove
+	background: $negative;
 	color: #fff;
-	padding-top: 7em;
-	padding-bottom: 7em;
+	padding-top: 5em;
+	padding-bottom: 5em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 2.5em;
@@ -247,5 +225,40 @@ img {
 	@media (max-width: $md) {
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+.game {
+	margin-bottom: 1.5em;
+	cursor: pointer;
+	opacity: 0.6;
+	transform: scale(0.95);
+	transition: all 0.2s ease;
+	&:hover {
+		transform: scale(1);
+		opacity: 1;
+	}
+	.logo {
+		width: 4.5em;
+		margin: 0 auto;
+	}
+	.score {
+		background: #fff;
+		color: $negative;
+		padding: 0.5em 2em 1em;
+		.pts {
+			color: #444;
+			font-family: 'Oswald';
+			font-size: 1.5em;
+			margin-bottom: 0;
+		}
+	}
+	.stat-line {
+		background: $celtics-green;
+		padding: 0.6em 2em 0.75em;
+		p {
+			font-size: 0.7em;
+			margin-bottom: 0;
+		}
 	}
 }

@@ -2,25 +2,6 @@
 
   'use strict';
 
-	// scrollmagic init
-	/*
-	let controller = new ScrollMagic.Controller({
-		globalSceneOptions: {
-			triggerHook: 'onLeave'
-		}
-	});
-
-	let slides = document.querySelectorAll('.section');
-
-	for (let i = 0; i < slides.length; i++) {
-		new ScrollMagic.Scene({
-			triggerElement: slides[i]
-		})
-		.setPin(slides[i])
-		.addTo(controller);
-	}
-	*/
-
 	// chart.js font defaults
 	Chart.defaults.global.defaultFontColor = '#666';
 	Chart.defaults.global.defaultFontFamily = '\'Source Sans Pro\', \'Helvetica\', \'Arial\', sans-serif';
@@ -53,31 +34,36 @@
 	Chart.defaults.global.elements.rectangle.borderWidth = 1;
 
 	// init chart
-	let chartElement = $('#chart');
-	let chart = new Chart(chartElement, {
-		type: 'bar',
-		data: {
-			labels: [],
-			datasets: [{
-				label: '',
-				backgroundColor: [],
-				borderColor: [],
-				data: []
-			}]
-		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true,
-						stepSize: 0,
-						min: 0,
-						max: 0
-					}
+	let initChart = function (element, type) {
+		return new Chart(element, {
+			type: type,
+			data: {
+				labels: [],
+				datasets: [{
+					label: '',
+					backgroundColor: [],
+					borderColor: [],
+					data: []
 				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true,
+							stepSize: 0,
+							min: 0,
+							max: 0
+						}
+					}]
+				}
 			}
-		}
-	});
+		});
+	}
+
+	// where chart lives in dom
+	let chartElement = $('#chart');
+	let chart = initChart(chartElement, 'bar');
 
 	// generates/updates the chart based on options obj arg
 	function generateChart(stat, dataset) {
@@ -203,8 +189,7 @@
 
 	}
 
-	generateChart('ppg', pointGuards);
-
+	// on select filter changes, update chart
 	$('select[name="stat"], select[name="group"]').on('change', function () {
 
 		let stat = $('select[name="stat"]').val() || 'ppg';
@@ -221,6 +206,44 @@
 
 		generateChart(stat, dataset);
 
+	});
+
+	function chartSizing() {
+
+		let stat = $('select[name="stat"]').val() || 'ppg';
+		let group = $('select[name="group"]').val() || 'general';
+		let dataset;
+
+		if (group === 'general') {
+			dataset = general;
+		} else if (group === 'pointGuards') {
+			dataset = pointGuards;
+		} else if (group === 'historic') {
+			dataset = historic;
+		}
+
+		chart.destroy();
+
+		if (window.innerWidth <= 768) {
+			chartElement.attr('height', '210');
+			chart = initChart(chartElement, 'horizontalBar');
+			generateChart(stat, dataset);
+		} else {
+			chartElement.attr('height', '85');
+			chart = initChart(chartElement, 'bar');
+			generateChart(stat, dataset);
+		}
+
+	}
+
+	$(window).on('load resize', function () {
+		chartSizing();
+	});
+
+	// init slick
+	$('.slick').slick({
+		arrows: true,
+		dots: true
 	});
 
 }(jQuery));
