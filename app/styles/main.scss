@@ -266,7 +266,7 @@ img {
 .slick {
 	max-height: 0;
 	overflow: hidden;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
 	&.open {
 		max-height: 1000px;
 	}
