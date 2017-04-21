@@ -326,6 +326,11 @@
 		// go to designated slide
 		$('.slick').slick('slickGoTo', slide);
 
+		// scroll to video
+		$('html, body').animate({
+			scrollTop: $('.slick').offset().top - 100
+		}, 1000);
+
 	});
 
 }(jQuery));
