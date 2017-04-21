@@ -46,42 +46,51 @@
 	  <div id="stat" class="section">
 	    <div class="container-fluid">
 	      <div class="row">
-	        <div class="col-md-5 text-left text-left-md">
-						<h3>The Numbers Don't Lie</h3>
-						<p>There's a reason Thomas has been anointed <em>King of the Fourth</em> by his beantown brethren. He's 2nd in the league in fourth-quarter points, only trailing Russell Westbrook, but doing it at a superior efficiency.</p>
-	          <p>In fact, Thomas is having one of the most efficient high-volume scoring seasons ever. Out of players who've averaged at least 19 shots per game in a season, Thomas ranks 7th in true shooting percentage <em>all-time</em> and 2nd all-time among guards &ndash; only trailing Stephen Curry’s 2015-16 MVP season.</p>
+	        <div class="col-md-5">
+						<div class="pad-right pad-right-md">
+							<h3>The Numbers Don't Lie</h3>
+							<p>There's a reason Thomas has been anointed <em>King of the Fourth</em> by his beantown brethren. He's 2nd in the league in fourth-quarter points, only trailing Russell Westbrook, but doing it with superior efficiency.</p>
+		          <p>In fact, Thomas is having one of the most efficient high-volume scoring seasons ever. Out of players who've averaged at least 19 shots per game in a season, Thomas ranks 7th in true shooting percentage <em>all-time</em> and 2nd all-time among guards &ndash; only trailing Stephen Curry’s 2015-16 MVP season.</p>
+						</div>
 	        </div>
+					<div class="col-md-7">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="custom-select">
+									<select name="stat">
+										<option value="fqppg">4th Quarter Points Per Game</option>
+										<option value="ppg">Points Per Game</option>
+										<option value="apg">Assists Per Game</option>
+										<option value="ts">True Shooting Percentage</option>
+										<option value="per">Player Efficiency Rating (PER)</option>
+									</select>
+									<div class="arrow"></div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="custom-select">
+									<select name="group">
+										<option value="topPlayers">Top Players</option>
+										<option value="pointGuards">Top Point Guards</option>
+										<option value="general">General Comparisons</option>
+										<option value="historic">Historic Seasons (All-Time)</option>
+										<option value="historicShort">Historic Seasons (6 Feet &amp; Under)</option>
+										<option value="historicTall">Historic Seasons (7 Feet &amp; Higher)</option>
+									</select>
+									<div class="arrow"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<canvas id="chart" height="120"></canvas>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 col-md-offset-3 col-sm-6">
-						<div class="custom-select">
-							<select name="stat">
-								<option value="fqppg">4th Quarter Points Per Game</option>
-								<option value="ppg">Points Per Game</option>
-								<option value="apg">Assists Per Game</option>
-								<option value="ts">True Shooting Percentage</option>
-								<option value="per">Player Efficiency Rating (PER)</option>
-							</select>
-							<div class="arrow"></div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="custom-select">
-							<select name="group">
-								<option value="topPlayers">Top Players</option>
-								<option value="pointGuards">Top Point Guards</option>
-								<option value="general">General Comparisons</option>
-								<option value="historic">Historic Seasons (All-Time)</option>
-								<option value="historicShort">Historic Seasons (6 Feet &amp; Under)</option>
-								<option value="historicTall">Historic Seasons (7 Feet &amp; Higher)</option>
-							</select>
-							<div class="arrow"></div>
-						</div>
-					</div>
-	      </div>
-				<div class="row">
 					<div class="col-md-12">
-						<canvas id="chart" height="85"></canvas>
+
 					</div>
 				</div>
 	    </div>

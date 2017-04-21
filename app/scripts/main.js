@@ -259,7 +259,7 @@
 			chart = initChart(chartElement, 'horizontalBar');
 			generateChart(stat, dataset);
 		} else {
-			chartElement.attr('height', '85');
+			chartElement.attr('height', '130');
 			chart = initChart(chartElement, 'bar');
 			generateChart(stat, dataset);
 		}
