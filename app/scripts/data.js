@@ -22,40 +22,59 @@ let thomas = {
 let topPlayers = [
 	{
 		name: {
-			first: 'Stephen',
-			last: 'Curry'
+			first: 'LeBron',
+			last: 'James'
 		},
-		height: 75,
-		weight: 190,
+		height: 80,
+		weight: 250,
 		stats: {
-			ppg: 25.3,
-			apg: 6.6,
-			fqppg: 4.9,
-			per: 23,
-			ts: 0.624
-		},
-		colors: {
-			bg: 'rgba(253, 185, 39, 0.3)',
-			border: '#fdb927'
-		}
-	},
-	{
-		name: {
-			first: 'Kyrie',
-			last: 'Irving'
-		},
-		height: 75,
-		weight: 193,
-		stats: {
-			ppg: 25.2,
-			apg: 5.8,
-			fqppg: 5.6,
-			per: 23,
-			ts: 0.58
+			ppg: 26.4,
+			apg: 8.7,
+			fqppg: 7.1,
+			per: 27,
+			ts: 0.619
 		},
 		colors: {
 			bg: 'rgba(134, 0, 56, 0.3)',
 			border: '#860038'
+		}
+	},
+	{
+		name: {
+			first: 'James',
+			last: 'Harden'
+		},
+		height: 77,
+		weight: 220,
+		stats: {
+			ppg: 29.1,
+			apg: 11.2,
+			fqppg: 6,
+			per: 27.3,
+			ts: 0.613
+		},
+		colors: {
+			bg: 'rgba(206, 17, 65, 0.3)',
+			border: '#ce1141'
+		}
+	},
+	{
+		name: {
+			first: 'Kawhi',
+			last: 'Leonard'
+		},
+		height: 79,
+		weight: 230,
+		stats: {
+			ppg: 25.5,
+			apg: 3.5,
+			fqppg: 7.3,
+			per: 27.5,
+			ts: 0.611
+		},
+		colors: {
+			bg: 'rgba(182, 191, 191, 0.3)',
+			border: '#b6bFbF'
 		}
 	}
 ];
