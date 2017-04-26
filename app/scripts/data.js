@@ -102,8 +102,10 @@ let topPlayers = [
 let general = [
 	{
 		name: {
-			first: 'Average Starting Point',
-			last: 'Guard'
+			//first: 'Average Starting Point',
+			first: '',
+			//last: 'Guard'
+			last: 'Average Starting Point Guard'
 		},
 		height: 74,
 		weight: 190,
@@ -121,8 +123,8 @@ let general = [
 	},
 	{
 		name: {
-			first: 'Average',
-			last: 'Player'
+			first: '',
+			last: 'Average Player'
 		},
 		height: 79,
 		weight: 220,

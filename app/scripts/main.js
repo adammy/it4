@@ -55,6 +55,12 @@
 							min: 0,
 							max: 0
 						}
+					}],
+					xAxes: [{
+						ticks: {
+							beginAtZero: true,
+							min: 0
+						}
 					}]
 				}
 			}
@@ -127,7 +133,8 @@
 		// setting values for chart
 		let label = stat.toUpperCase();
 		let names = dataset.map(function (player) {
-			return `${player.name.first} ${player.name.last}`;
+			//return `${player.name.first} ${player.name.last}`;
+			return player.name.last;
 		});
 		let datapoints = (function () {
 			if (stat === 'fqppg') {
@@ -201,6 +208,9 @@
 		chart.options.scales.yAxes[0].ticks.stepSize = stepSize;
 		chart.options.scales.yAxes[0].ticks.min = min;
 		chart.options.scales.yAxes[0].ticks.max = max;
+		chart.options.scales.xAxes[0].ticks.stepSize = stepSize;
+		chart.options.scales.xAxes[0].ticks.min = min;
+		chart.options.scales.xAxes[0].ticks.max = max;
 
 		// update the chart on the page
 		chart.update();
