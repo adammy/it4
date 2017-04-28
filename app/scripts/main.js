@@ -276,8 +276,51 @@
 		fade: true
 	});
 
-	// on slide change
-	$('.slick').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+	// on slide change play
+	$('#off-ball-play').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+
+		// get elements
+		let currentSlideElement = $(slick.$slides.get(currentSlide));
+		let nextSlideElement = $(slick.$slides.get(nextSlide));
+
+		// get play
+		let play = nextSlideElement.data('play');
+
+		// get video players
+		let currentPlayer = currentSlideElement.find('iframe').get(0);
+		let nextPlayer = nextSlideElement.find('iframe').get(0);
+
+		// pause previous video
+		if (currentPlayer != undefined) {
+			currentPlayer.contentWindow.postMessage(JSON.stringify({
+				"event": "command",
+				"func": "pauseVideo"
+			}), '*');
+		}
+
+		// play next video
+		if (nextPlayer != undefined) {
+			nextPlayer.contentWindow.postMessage(JSON.stringify({
+				"event": "command",
+				"func": "playVideo"
+			}), '*');
+		}
+
+	});
+
+	// on click of play link
+	$('a[href="#play"]').on('click', function () {
+
+		// get data attr
+		let slide = parseInt($(this).data('slide'));
+
+		// go to designated slide
+		$('#off-ball-play').slick('slickGoTo', slide);
+
+	});
+
+	// on slide change game
+	$('#games').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
 		// get elements
 		let currentSlideElement = $(slick.$slides.get(currentSlide));
@@ -316,18 +359,18 @@
 	$('.game').on('click', function () {
 
 		// show slick slider
-		$('.slick').addClass('open');
+		$('#games').addClass('open');
 
 		// get data attr
 		let game = $(this).data('game');
 		let slide = parseInt($(this).data('slide'));
 
 		// go to designated slide
-		$('.slick').slick('slickGoTo', slide);
+		$('#games').slick('slickGoTo', slide);
 
 		// scroll to video
 		$('html, body').animate({
-			scrollTop: $('.slick').offset().top - 100
+			scrollTop: $('#games').offset().top - 100
 		}, 1000);
 
 	});
