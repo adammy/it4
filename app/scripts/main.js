@@ -217,26 +217,29 @@
 
 	}
 
+	// apply a dataset
+	function getDataset(group) {
+		if (group === 'topPlayers') {
+			return topPlayers;
+		} else if (group === 'pointGuards') {
+			return pointGuards;
+		} else if (group === 'general') {
+			return general;
+		} else if (group === 'historic') {
+			return historic;
+		} else if (group === 'historicShort') {
+			return historicShort;
+		} else if (group === 'historicTall') {
+			return historicTall;
+		}
+	}
+
 	// on select filter changes, update chart
 	$('select[name="stat"], select[name="group"]').on('change', function () {
 
 		let stat = $('select[name="stat"]').val() || 'fqppg';
 		let group = $('select[name="group"]').val() || 'topPlayers';
-		let dataset;
-
-		if (group === 'topPlayers') {
-			dataset = topPlayers;
-		} else if (group === 'pointGuards') {
-			dataset = pointGuards;
-		} else if (group === 'general') {
-			dataset = general;
-		} else if (group === 'historic') {
-			dataset = historic;
-		} else if (group === 'historicShort') {
-			dataset = historicShort;
-		} else if (group === 'historicTall') {
-			dataset = historicTall;
-		}
+		let dataset = getDataset(group);
 
 		generateChart(stat, dataset);
 
@@ -246,21 +249,7 @@
 
 		let stat = $('select[name="stat"]').val() || 'fqppg';
 		let group = $('select[name="group"]').val() || 'topPlayers';
-		let dataset;
-
-		if (group === 'topPlayers') {
-			dataset = topPlayers;
-		} else if (group === 'pointGuards') {
-			dataset = pointGuards;
-		} else if (group === 'general') {
-			dataset = general;
-		} else if (group === 'historic') {
-			dataset = historic;
-		} else if (group === 'historicShort') {
-			dataset = historicShort;
-		} else if (group === 'historicTall') {
-			dataset = historicTall;
-		}
+		let dataset = getDataset(group);
 
 		chart.destroy();
 
