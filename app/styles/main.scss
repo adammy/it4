@@ -61,6 +61,10 @@ p {
 img {
 	max-width: 100%;
 }
+a {
+	color: lighten($celtics-green, 12);
+	text-decoration: underline;
+}
 
 .no-wrap {
 	white-space: nowrap;
@@ -161,14 +165,6 @@ img {
 	}
 }
 
-/*
-#wrapper {
-	max-width: 1750px;
-	margin: 0 auto;
-	position: relative;
-}
-*/
-
 .container-fluid {
 	max-width: 1600px;
 }
@@ -204,8 +200,8 @@ img {
 #stat {
 	background: $negative;
 	color: #fff;
-	padding-top: 5em;
-	padding-bottom: 6em;
+	padding-top: 6em;
+	padding-bottom: 8em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 3em;
@@ -216,20 +212,24 @@ img {
 }
 
 #play {
-	background: #fff;
-  padding-top: 5em;
-	padding-bottom: 6em;
+	background: $celtics-green;
+	color: #fff;
+  padding-top: 6em;
+	padding-bottom: 8em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 3em;
+	}
+	a {
+		color: #fff;
 	}
 }
 
 #highlights {
 	background: $negative;
 	color: #fff;
-	padding-top: 5em;
-	padding-bottom: 6em;
+	padding-top: 6em;
+	padding-bottom: 8em;
 	@media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 3em;
