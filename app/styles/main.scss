@@ -18,7 +18,7 @@ $padding-factor: 2.5em;
 body {
   color: $negative;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
 	@media (max-width: $sm) {
 		font-size: 18px;
@@ -66,6 +66,17 @@ a {
 	text-decoration: underline;
 }
 
+.btn {
+  font-size: 0.9em;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  padding: 0.6em 1em;
+  &-primary {
+    background: $negative;
+    color: #fff;
+  }
+}
 .no-wrap {
 	white-space: nowrap;
 }
@@ -74,6 +85,15 @@ a {
 }
 .circle {
   border-radius: 50%;
+}
+.col-no-pad {
+  padding: 0;
+  &-first {
+    padding-right: 0;
+  }
+  &-last {
+    padding-left: 0;
+  }
 }
 .pad-side {
 	padding-left: $padding-factor;
@@ -132,8 +152,14 @@ a {
 	display: inline-block;
 	position: relative;
 	margin: 1.5em 0 0;
+  label {
+    color: #888;
+    font-size: 0.8em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 	select {
-		background: lighten($negative, 5%);
+    background: transparentize(#fff, 0.93);
 		color: #fff;
 		border: 0;
 		border-radius: 0;
@@ -149,7 +175,7 @@ a {
 			display: none;
 		}
 		&:hover, &:focus {
-			background: lighten($negative, 7%);
+      background: transparentize(#fff, 0.9);
 		}
 	}
 	.arrow {
@@ -159,10 +185,21 @@ a {
 		width: 0;
 		height: 0;
 		position: absolute;
-		top: 1.5em;
+		top: 3.3em;
 		right: 1em;
 		pointer-events: none;
 	}
+  &-darken {
+    label {
+      color: #ccc;
+    }
+    select {
+      background: transparentize($negative, 0.75);
+      &:hover, &:focus {
+        background: transparentize($negative, 0.82);
+  		}
+    }
+  }
 }
 
 .container-fluid {
@@ -283,7 +320,7 @@ a {
 		background: $celtics-green;
 		padding: 0.6em 2em 0.75em;
 		p {
-			font-size: 0.7em;
+			font-size: 0.8em;
 			margin-bottom: 0;
 		}
 	}

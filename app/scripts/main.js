@@ -308,14 +308,16 @@
 
 	});
 
-	// on click of play link
-	$('a[href="#play"]').on('click', function () {
+	// on select of play type
+	$('select[name="play"]').on('change', function (e) {
 
-		// get data attr
-		let slide = parseInt($(this).data('slide'));
+		// get slide val
+		let slide = parseInt($(this).val());
 
 		// go to designated slide
 		$('#off-ball-play').slick('slickGoTo', slide);
+
+    e.preventDefault();
 
 	});
 
