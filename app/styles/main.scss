@@ -65,6 +65,11 @@ a {
 	color: lighten($celtics-green, 12);
 	text-decoration: underline;
 }
+iframe {
+  @media (max-width: $sm) {
+    height: 180px;
+  }
+}
 
 .btn {
   font-size: 0.9em;
@@ -82,6 +87,12 @@ a {
 }
 .muted {
 	color: #999;
+}
+.author {
+  margin-bottom: 2em;
+  @media (max-width: $md) {
+    color: #fff;
+  }
 }
 .circle {
   border-radius: 50%;
@@ -133,25 +144,10 @@ a {
 	}
 }
 
-.author {
-	margin-bottom: 5.5em;
-	img {
-		border-radius: 50%;
-		float: left;
-	}
-	.name {
-		font-size: 0.75em;
-		color: #ccc;
-		margin: 0.75em 0 0 1em;
-		float: left;
-	}
-}
-
 .custom-select {
 	width: 100%;
 	display: inline-block;
 	position: relative;
-	margin: 1.5em 0 0;
   label {
     color: #888;
     font-size: 0.8em;
@@ -223,9 +219,6 @@ a {
 	min-height: 100vh;
   padding-top: 6em;
 	padding-bottom: 5em;
-	& > div {
-		display: block;
-	}
 	@media (max-width: $md) {
 		background: $celtics-green;
 		min-height: auto;
@@ -268,6 +261,30 @@ a {
 	padding-top: 6em;
 	padding-bottom: 8em;
 	@media (max-width: $md) {
+		padding-top: 2.5em;
+		padding-bottom: 3em;
+	}
+}
+
+#conclusion {
+  background: $celtics-green;
+	color: #fff;
+  background: url('../images/conclusion.jpg');
+  background-size: cover;
+  padding-top: 6em;
+  padding-bottom: 8em;
+  @media (max-width: $md) {
+		background: $celtics-green;
+		min-height: auto;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+#comments {
+  padding-top: 6em;
+  padding-bottom: 8em;
+  @media (max-width: $md) {
 		padding-top: 2.5em;
 		padding-bottom: 3em;
 	}
