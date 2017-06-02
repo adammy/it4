@@ -293,16 +293,16 @@
 		// pause previous video
 		if (currentPlayer != undefined) {
 			currentPlayer.contentWindow.postMessage(JSON.stringify({
-				"event": "command",
-				"func": "pauseVideo"
+				'event': 'command',
+				'func': 'pauseVideo'
 			}), '*');
 		}
 
 		// play next video
 		if (nextPlayer != undefined) {
 			nextPlayer.contentWindow.postMessage(JSON.stringify({
-				"event": "command",
-				"func": "playVideo"
+				'event': 'command',
+				'func': 'playVideo'
 			}), '*');
 		}
 
@@ -342,16 +342,16 @@
 		// pause previous video
 		if (currentPlayer != undefined) {
 			currentPlayer.contentWindow.postMessage(JSON.stringify({
-				"event": "command",
-				"func": "pauseVideo"
+				'event': 'command',
+				'func': 'pauseVideo'
 			}), '*');
 		}
 
 		// play next video
 		if (nextPlayer != undefined) {
 			nextPlayer.contentWindow.postMessage(JSON.stringify({
-				"event": "command",
-				"func": "playVideo"
+				'event': 'command',
+				'func': 'playVideo'
 			}), '*');
 		}
 
